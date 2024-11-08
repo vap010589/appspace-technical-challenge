@@ -18,7 +18,7 @@ export const DetailPage: FC = () => {
   return (
     <Container>
       <Card>
-        <h2>{character.name}</h2>
+        <h3>{character.name}</h3>
         <img src={character.image} alt={character.name} width="200" />
         <p>Species: {character.species}</p>
         <p>Status: {character.status}</p>

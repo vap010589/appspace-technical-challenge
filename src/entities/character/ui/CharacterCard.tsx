@@ -10,7 +10,7 @@ type Props = {
 export const CharacterCard: FC<Props> = ({ character }) => (
   <Card>
     <Link to={`/character/${character.id}`}>
-      <h3>{character.name}</h3>
+      <h5>{character.name}</h5>
       <img src={character.image} alt={character.name} width="150" />
     </Link>
   </Card>

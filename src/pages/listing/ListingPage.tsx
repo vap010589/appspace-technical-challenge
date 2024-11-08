@@ -56,6 +56,10 @@ const ActionContainer = styled.div`
   display: flex;
   margin-bottom: 20px;
   gap: 16px;
+
+  @media (max-width: 460px) {
+    flex-direction: column;
+  }
 `
 
 const FilterInput = styled.input`
