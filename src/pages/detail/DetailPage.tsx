@@ -30,7 +30,7 @@ export const DetailPage: FC = () => {
 const Container = styled.div`
   max-width: 460px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 16px;
 `
 
 const Card = styled.div`

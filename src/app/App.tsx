@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { ListingPage } from "../pages/listing"
 import { DetailPage } from "../pages/detail/DetailPage"
-import "../index.css"
+import "../shared/styles/index.css"
 
 export const App: FC = () => (
   <Router>
