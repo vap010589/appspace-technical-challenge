@@ -108,7 +108,7 @@ src/
 
 This app is deployed on **[Vercel](https://vercel.com)** for live access. You can visit the live app here:
 
-- **[Live Application URL](https://your-live-url.vercel.app/)**
+- **[Live Application URL](https://rick-and-morty-character-ten.vercel.app/)**
 
 ---
 
