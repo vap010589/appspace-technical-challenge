@@ -8,11 +8,27 @@ export const ListingPage: FC = () => {
   const [characters, setCharacters] = useState<Character[]>([])
   const [filter, setFilter] = useState("")
   const [sortOrder, setSortOrder] = useState("asc")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-    getCharacters({ name: filter }).then((res) =>
-      setCharacters(res.data.results)
-    )
+    const fetchData = async () => {
+      setLoading(true)
+      setError(false)
+
+      try {
+        const responce = await getCharacters({ name: filter })
+        setCharacters(responce.data.results)
+      } catch (error) {
+        console.log("error", error)
+        setCharacters([])
+        setError(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData()
   }, [filter])
 
   const sortedCharacters = [...characters].sort((a, b) =>
@@ -42,6 +58,8 @@ export const ListingPage: FC = () => {
       {sortedCharacters.map((character) => (
         <CharacterCard key={character.id} character={character} />
       ))}
+      {loading && <Message>Loading...</Message>}
+      {error && <Message>Loading data error. Please refresh the page.</Message>}
     </Container>
   )
 }
@@ -81,4 +99,9 @@ const SortButton = styled.button`
   color: #fff;
   border-radius: 4px;
   font-size: 16px;
+`
+
+const Message = styled.div`
+  padding: 8px 16px;
+  text-align: center;
 `

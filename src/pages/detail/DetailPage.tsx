@@ -13,7 +13,7 @@ export const DetailPage: FC = () => {
     if (id) getCharacterById(Number(id)).then((res) => setCharacter(res.data))
   }, [id])
 
-  if (!character) return <div>Loading...</div>
+  if (!character) return <Loading>Loading...</Loading>
 
   return (
     <Container>
@@ -39,4 +39,12 @@ const Card = styled.div`
   padding: 16px;
   margin-bottom: 16px;
   text-align: center;
+`
+
+const Loading = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
